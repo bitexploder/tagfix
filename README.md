@@ -22,6 +22,8 @@ cd to tagfix
 go install
 ~~~~~
 
+# Usage
+
 **Example file name:**
 
 `Author Name - Book Title Ch34.mp3`
