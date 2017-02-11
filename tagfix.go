@@ -60,7 +60,7 @@ func flags() Options {
 
 	var o Options
 
-	var mp3dir = flag.String("mp3dir", "", "directory of mp3 files")
+	var mp3dir = flag.String("mp3dir", "", "directory of mp3 files. Will only read files that end in .mp3 from this directory")
 	var idxpat = flag.String("idxpat", "([0-9]+)", "regex pattern to extract file index string")
 	var namepat = flag.String("namepat", "- ([A-Za-z0-9 ]+) Ch.*", "regex pattern to extract name of item")
 	var titletemp = flag.String("titletemp", "{{ .Index }} - {{ .Name }}", "a golang text template for the id3 title to be set to")
@@ -124,7 +124,9 @@ func main() {
 			panic(err)
 		}
 
-		fmt.Printf("Title to set: %s for '%s'\n", buf.String(), fname)
+		if !opts.Quiet {
+			fmt.Printf("Title to set: %s for '%s'\n", buf.String(), fname)
+		}
 		if !opts.Trial {
 			mp3f.SetTitle(buf.String())
 			mp3f.Close()
