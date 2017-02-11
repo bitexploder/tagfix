@@ -34,7 +34,8 @@ The sub expressions (everything between the parenthesis) are what tagfix will us
 
 # Command Help
 
-```Usage of tagfix:
+~~~~~
+Usage of tagfix:
   -idxpat string
         regex pattern to extract file index string (default "([0-9]+)")
   -mp3dir string
@@ -46,7 +47,9 @@ The sub expressions (everything between the parenthesis) are what tagfix will us
   -titletemp string
         a golang text template for the id3 title to be set to (default "{{ .Index }} - {{ .Name }}")
   -trial
-        try things out without modifying the mp3 file```
+        try things out without modifying the mp3 file
+~~~~~
+
         
 # Warnings
 
