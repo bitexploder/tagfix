@@ -10,6 +10,18 @@ I use Downcast, which is a great podcast player, to listen to audio books. Downc
 
 The idea is to extract the title and index number for each file from the file name, which almost always has the index number and title in it in some fashion. Regular expressions with sub-expression matching are employed. Once properly extracted they are put into a template and that is set as the mp3 title. 
 
+# Installation
+
+Source only. If you don't have golang setup, read the instructions for that and install golang first. 
+
+In your go environment:
+
+~~~~~
+go get -u github.com/bitexploder/tagfix
+cd to tagfix
+go install
+~~~~~
+
 **Example file name:**
 
 `Author Name - Book Title Ch34.mp3`
