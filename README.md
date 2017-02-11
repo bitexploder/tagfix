@@ -15,15 +15,19 @@ The idea is to extract the title and index number for each file from the file na
 `Author Name - Book Title Ch34.mp3`
 
 **Index pattern**
+
 `([0-9]+)`
 
 **Name pattern**
+
 `- (A-Za-z0-9 ]+) Ch.*`
 
 **Title template**
+
 `{{ .Index }} - {{ .Name }}`
 
 **RESULT**
+
 `34 - Book Title`
 
 The sub expressions (everything between the parenthesis) are what tagfix will use. It must match exactly once or the file is skipped. 
